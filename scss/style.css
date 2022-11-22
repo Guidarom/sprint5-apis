@@ -1,0 +1,6 @@
+@import url(../bootstrap-5.2.2/scss/bootstrap.scss);
+.card1 {
+  height: 300px !important;
+  display: flex !important;
+  justify-content: center !important;
+}/*# sourceMappingURL=style.css.map */
