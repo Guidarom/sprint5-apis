@@ -3,10 +3,10 @@
 if (navigator.geolocation){
     var success= function(position:any){
         
-        var latitud = position.coords.latitude,
+        const latitud = position.coords.latitude,
             longitud = position.coords.longitude;
-        var newLatitud =latitud.toString();
-        var newLongitud = longitud.toString();
+        const newLatitud: String = latitud.toString();
+        const newLongitud: String = longitud.toString();
 
 
 // 3.- hacemos otro fetch para traer el estado del clima por la ubicación mediante latitud y longitud
@@ -19,7 +19,6 @@ if (navigator.geolocation){
                 const weatherDescription = (newWeather[0]).description
                 console.log(newWeather)
                 document.getElementById('getWeather')!.innerHTML=weatherDescription
-        
             });
             
             
@@ -31,6 +30,7 @@ if (navigator.geolocation){
     
 }
 //1.- Obtenemos el chiste
+
 function getJoke(){
     const apiJoke = 'https://icanhazdadjoke.com';
     const header = {headers: {Accept: "application/json" }};
@@ -40,14 +40,39 @@ function getJoke(){
     .then((data) => {
     const newJoke= data.joke
     document.getElementById('getAjoke')!.innerHTML=newJoke
-        
+    return newJoke
     });
+    
 }  
+// puntuamos el chiste
+const reportAcudits:Acudit[]=[];
 
+interface Acudit{
+    joke: String;
+    score: Number;
+    date: String;
+}
 
+function getPoints(id:number){
 
+    const nota: number=id
+    const currentDate = new Date();
+    const textDate = currentDate.toISOString();
+    const lastJoke:any = document.getElementById('getAjoke')?.outerText;
+    const textLastJoke:String = lastJoke
+    const jokeFound = reportAcudits.find((e)=>textLastJoke ===e.joke);
+    
+    const acudit: Acudit = {
+        joke: textLastJoke,
+        score: nota,
+        date: textDate
+        
+    }
+    
+    
+    if(lastJoke!==''&& !jokeFound){
+    reportAcudits.push(acudit)
+    console.log(reportAcudits)
+    }
 
-
-
-
-
+} 

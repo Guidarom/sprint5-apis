@@ -3,4 +3,8 @@
   height: 300px !important;
   display: flex !important;
   justify-content: center !important;
+}
+
+.card-body {
+  max-width: 700px !important;
 }/*# sourceMappingURL=style.css.map */
