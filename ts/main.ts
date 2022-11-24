@@ -8,7 +8,6 @@ if (navigator.geolocation){
         const newLatitud: String = latitud.toString();
         const newLongitud: String = longitud.toString();
 
-
 // 3.- hacemos otro fetch para traer el estado del clima por la ubicación mediante latitud y longitud
         const apiWeather= `https://api.openweathermap.org/data/2.5/weather?lat=${newLatitud}&lon=${newLongitud}&appid=26e4714b232ad047024b8f3db887092f&lang=ca&units=metric`;
             console.log(apiWeather);
@@ -81,15 +80,12 @@ function getPoints(id:number){
     const textLastJoke:String = lastJoke
     const jokeFound = reportAcudits.find((e)=>textLastJoke ===e.joke);
     
-    
     const acudit: Acudit = {
         joke: textLastJoke,
         score: nota,
         date: textDate
         
-    }
-    
-    
+    } 
     if(textLastJoke!==''&& !jokeFound){
     reportAcudits.push(acudit)
     console.log(reportAcudits)
