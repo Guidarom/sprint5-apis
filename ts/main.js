@@ -6,15 +6,17 @@ if (navigator.geolocation) {
         const newLatitud = latitud.toString();
         const newLongitud = longitud.toString();
         // 3.- hacemos otro fetch para traer el estado del clima por la ubicación mediante latitud y longitud
-        const apiWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${newLatitud}&lon=${newLongitud}&appid=26e4714b232ad047024b8f3db887092f&lang=ca`;
+        const apiWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${newLatitud}&lon=${newLongitud}&appid=26e4714b232ad047024b8f3db887092f&lang=ca&units=metric`;
         console.log(apiWeather);
         fetch(apiWeather)
             .then((response) => response.json())
             .then((data) => {
             const newWeather = data.weather;
+            const tempCent = data.main.temp;
+            console.log(data.main.temp);
             const weatherDescription = (newWeather[0]).description;
             console.log(newWeather);
-            document.getElementById('getWeather').innerHTML = weatherDescription;
+            document.getElementById('getWeather').innerHTML = `Avui: ${weatherDescription} | ${tempCent}\u00B0`;
         });
     };
     //console.log(parametros)
@@ -23,19 +25,39 @@ if (navigator.geolocation) {
     });
 }
 //1.- Obtenemos el chiste
-function getJoke() {
-    const apiJoke = 'https://icanhazdadjoke.com';
-    const header = { headers: { Accept: "application/json" } };
-    fetch(apiJoke, header)
-        .then((response) => response.json())
-        .then((data) => {
-        const newJoke = data.joke;
-        document.getElementById('getAjoke').innerHTML = newJoke;
-        return newJoke;
-    });
-}
-// puntuamos el chiste
 const reportAcudits = [];
+let arrayCounter = 0;
+function getJoke() {
+    var _a;
+    const lastJoke = (_a = document.getElementById('getAjoke')) === null || _a === void 0 ? void 0 : _a.outerText;
+    const textLastJoke = lastJoke;
+    const jokeFound = reportAcudits.find((e) => textLastJoke === e.joke);
+    if (jokeFound || arrayCounter === 0) {
+        if (arrayCounter % 2 === 0) {
+            const apiNorris = 'https://api.chucknorris.io/jokes/random';
+            fetch(apiNorris)
+                .then((response) => response.json())
+                .then((data) => {
+                const norrisJoke = data.value;
+                document.getElementById('getAjoke').innerHTML = norrisJoke;
+                return norrisJoke;
+            });
+        }
+        else {
+            const apiJoke = 'https://icanhazdadjoke.com';
+            const header = { headers: { Accept: "application/json" } };
+            fetch(apiJoke, header)
+                .then((response) => response.json())
+                .then((data) => {
+                const newJoke = data.joke;
+                document.getElementById('getAjoke').innerHTML = newJoke;
+                return newJoke;
+            });
+        }
+        arrayCounter++;
+    }
+}
+;
 function getPoints(id) {
     var _a;
     const nota = id;
@@ -49,8 +71,9 @@ function getPoints(id) {
         score: nota,
         date: textDate
     };
-    if (lastJoke !== '' && !jokeFound) {
+    if (textLastJoke !== '' && !jokeFound) {
         reportAcudits.push(acudit);
         console.log(reportAcudits);
     }
 }
+;
