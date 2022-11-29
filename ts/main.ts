@@ -18,9 +18,13 @@ if (navigator.geolocation){
                 const tempCent = data.main.temp;
                 console.log(data)
                 console.log(data.main.temp);
+                const icon = (newWeather[0]).icon
+                console.log(icon)
+                const iconWeather = <HTMLImageElement>document.getElementById('iconWeather')
+                iconWeather.src = "./Images/icons-temp/01d.png"
                 const weatherDescription = (newWeather[0]).description
                 console.log(newWeather)
-                document.getElementById('getWeather')!.innerHTML=`${weatherDescription} | ${tempCent}\u00B0`
+                document.getElementById('getWeather')!.innerHTML=` ${tempCent}\u00B0`
             });
             
             
@@ -65,7 +69,7 @@ function getJoke(){
     arrayCounter++
     }
     else{
-        alert("valora l'acudit per veure el seguent")
+        alert("valora l'acudit per veure el següent")
     }
 };
 // puntuamos el chiste
