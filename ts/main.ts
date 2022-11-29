@@ -21,7 +21,7 @@ if (navigator.geolocation){
                 const icon = (newWeather[0]).icon
                 console.log(icon)
                 const iconWeather = <HTMLImageElement>document.getElementById('iconWeather')
-                iconWeather.src = "./Images/icons-temp/01d.png"
+                iconWeather.src = `./Images/icons-temp/${icon}.png`
                 const weatherDescription = (newWeather[0]).description
                 console.log(newWeather)
                 document.getElementById('getWeather')!.innerHTML=` ${tempCent}\u00B0`
