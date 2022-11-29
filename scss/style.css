@@ -1,10 +1,157 @@
 @import url(../bootstrap-5.2.2/scss/bootstrap.scss);
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
 .card1 {
   height: 300px !important;
   display: flex !important;
   justify-content: center !important;
+  border: none;
 }
 
 .card-body {
   max-width: 700px !important;
+}
+
+.score1 {
+  border: none !important;
+  width: 50px !important;
+  background-attachment: url("../Images/faces/face1.svg");
+  background-image: url("../Images/faces/face1.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.score2 {
+  background-image: url("../Images/faces/face2.svg");
+  border: none !important;
+  width: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.score3 {
+  background-image: url("../Images/faces/face3.svg");
+  border: none !important;
+  width: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bgImg {
+  position: absolute;
+  z-index: -2;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s;
+}
+
+#bgImg2 {
+  position: absolute;
+  z-index: -1;
+  top: 500px;
+  left: 40px;
+  width: 15%;
+  height: 15%;
+}
+
+#bgImg3 {
+  position: absolute;
+  z-index: -1;
+  top: 120px;
+  right: 50px;
+  width: 15%;
+  height: 15%;
+}
+
+.blob_1 {
+  background-image: url(../Images/blobs/blob1.svg);
+}
+
+.blob_2 {
+  background-image: url(../Images/blobs/blob2.svg);
+}
+
+.blob_3 {
+  background-image: url(../Images/blobs/blob3.svg);
+}
+
+.blob_4 {
+  background-image: url(../Images/blobs/blob4.svg);
+}
+
+.blob_5 {
+  background-image: url(../Images/blobs/blob5.svg);
+}
+
+.blo_6 {
+  background-image: url(../Images/blobs/blob6.svg);
+}
+
+.blob_7 {
+  background-image: url(../Images/blobs/blob7.svg);
+}
+
+.blob_8 {
+  background-image: url(../Images/blobs/blob8.svg);
+}
+
+.blob_9 {
+  background-image: url(../Images/blobs/blob9.svg);
+}
+
+.blob_10 {
+  background-image: url(../Images/blobs/blob10.svg);
+}
+
+.jokeBtn {
+  background-color: rgba(255, 255, 255, 0);
+  background-position: 4px 4px;
+  padding: 15px 30px;
+  margin-top: 30px;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.btnBg {
+  content: "";
+  display: block;
+  width: 179.91px;
+  height: 58px;
+  background-color: rgb(234, 204, 4);
+  position: relative;
+  left: 50px;
+  top: -50px;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.card-footer {
+  width: 300px;
+  height: 100px;
+}
+
+@media (max-width: 576px) {
+  #bgImg2 {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #bgImg3 {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

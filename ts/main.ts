@@ -16,10 +16,11 @@ if (navigator.geolocation){
             .then((data) => {
                 const newWeather= data.weather;
                 const tempCent = data.main.temp;
+                console.log(data)
                 console.log(data.main.temp);
                 const weatherDescription = (newWeather[0]).description
                 console.log(newWeather)
-                document.getElementById('getWeather')!.innerHTML=`Avui: ${weatherDescription} | ${tempCent}\u00B0`
+                document.getElementById('getWeather')!.innerHTML=`${weatherDescription} | ${tempCent}\u00B0`
             });
             
             
@@ -60,8 +61,11 @@ function getJoke(){
             return newJoke
         }); 
         }
-
+    changeBackground()
     arrayCounter++
+    }
+    else{
+        alert("valora l'acudit per veure el seguent")
     }
 };
 // puntuamos el chiste
@@ -91,5 +95,18 @@ function getPoints(id:number){
     console.log(reportAcudits)
     }
 };
+// ---------------------- CHANGE IMG BG ---------------------- 
 
+const bgImg: NodeListOf<HTMLOrSVGImageElement> = document.querySelectorAll('.bgImg')
 
+function changeBackground(): void {
+    
+    bgImg.forEach((img: HTMLOrSVGImageElement) => {
+        
+        const randomNumber = Math.round(Math.random() * 10)
+        const srcRoute = `../images/blobs/blob${randomNumber}.svg`
+        img.style.backgroundImage = `url(${srcRoute})`
+
+    });
+
+}
