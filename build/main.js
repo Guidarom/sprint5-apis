@@ -18,7 +18,7 @@ if (navigator.geolocation) {
             const icon = (newWeather[0]).icon;
             console.log(icon);
             const iconWeather = document.getElementById('iconWeather');
-            iconWeather.src = `./Images/icons-temp/${icon}.png`;
+            iconWeather.src = `./img/icons-temp/${icon}.png`;
             const weatherDescription = (newWeather[0]).description;
             console.log(newWeather);
             document.getElementById('getWeather').innerHTML = ` ${tempCent}\u00B0`;
@@ -91,7 +91,7 @@ const bgImg = document.querySelectorAll('.bgImg');
 function changeBackground() {
     bgImg.forEach((img) => {
         const randomNumber = Math.round(Math.random() * 10);
-        const srcRoute = `../images/blobs/blob${randomNumber}.svg`;
+        const srcRoute = `../img/blobs/blob${randomNumber}.svg`;
         img.style.backgroundImage = `url(${srcRoute})`;
     });
 }

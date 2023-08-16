@@ -21,7 +21,7 @@ if (navigator.geolocation){
                 const icon = (newWeather[0]).icon
                 console.log(icon)
                 const iconWeather = <HTMLImageElement>document.getElementById('iconWeather')
-                iconWeather.src = `./Images/icons-temp/${icon}.png`
+                iconWeather.src = `./img/icons-temp/${icon}.png`
                 const weatherDescription = (newWeather[0]).description
                 console.log(newWeather)
                 document.getElementById('getWeather')!.innerHTML=` ${tempCent}\u00B0`
@@ -108,7 +108,7 @@ function changeBackground(): void {
     bgImg.forEach((img: HTMLOrSVGImageElement) => {
         
         const randomNumber = Math.round(Math.random() * 10)
-        const srcRoute = `../Images/blobs/blob${randomNumber}.svg`
+        const srcRoute = `../img/blobs/blob${randomNumber}.svg`
         img.style.backgroundImage = `url(${srcRoute})`
     });
 

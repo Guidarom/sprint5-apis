@@ -21,15 +21,15 @@ body {
 .score1 {
   border: none !important;
   width: 50px !important;
-  background-attachment: url("../Images/faces/face1.svg");
-  background-image: url("../Images/faces/face1.svg") !important;
+  background-attachment: url("../img/faces/face1.svg");
+  background-image: url("../img/faces/face1.svg") !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .score2 {
-  background-image: url("../Images/faces/face2.svg");
+  background-image: url("../img/faces/face2.svg");
   border: none !important;
   width: 50px;
   background-position: center;
@@ -38,7 +38,7 @@ body {
 }
 
 .score3 {
-  background-image: url("../Images/faces/face3.svg");
+  background-image: url("../img/faces/face3.svg");
   border: none !important;
   width: 50px;
   background-position: center;
@@ -77,43 +77,43 @@ body {
 }
 
 .blob_1 {
-  background-image: url(../Images/blobs/blob1.svg);
+  background-image: url(../img/blobs/blob1.svg);
 }
 
 .blob_2 {
-  background-image: url(../Images/blobs/blob2.svg);
+  background-image: url(../img/blobs/blob2.svg);
 }
 
 .blob_3 {
-  background-image: url(../Images/blobs/blob3.svg);
+  background-image: url(../img/blobs/blob3.svg);
 }
 
 .blob_4 {
-  background-image: url(../Images/blobs/blob4.svg);
+  background-image: url(../img/blobs/blob4.svg);
 }
 
 .blob_5 {
-  background-image: url(../Images/blobs/blob5.svg);
+  background-image: url(../img/blobs/blob5.svg);
 }
 
 .blo_6 {
-  background-image: url(../Images/blobs/blob6.svg);
+  background-image: url(../img/blobs/blob6.svg);
 }
 
 .blob_7 {
-  background-image: url(../Images/blobs/blob7.svg);
+  background-image: url(../img/blobs/blob7.svg);
 }
 
 .blob_8 {
-  background-image: url(../Images/blobs/blob8.svg);
+  background-image: url(../img/blobs/blob8.svg);
 }
 
 .blob_9 {
-  background-image: url(../Images/blobs/blob9.svg);
+  background-image: url(../img/blobs/blob9.svg);
 }
 
 .blob_10 {
-  background-image: url(../Images/blobs/blob10.svg);
+  background-image: url(../img/blobs/blob10.svg);
 }
 
 .jokeBtn {
