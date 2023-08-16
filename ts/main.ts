@@ -110,7 +110,6 @@ function changeBackground(): void {
         const randomNumber = Math.round(Math.random() * 10)
         const srcRoute = `../images/blobs/blob${randomNumber}.svg`
         img.style.backgroundImage = `url(${srcRoute})`
-
     });
 
 }
