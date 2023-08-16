@@ -108,7 +108,7 @@ function changeBackground(): void {
     bgImg.forEach((img: HTMLOrSVGImageElement) => {
         
         const randomNumber = Math.round(Math.random() * 10)
-        const srcRoute = `../images/blobs/blob${randomNumber}.svg`
+        const srcRoute = `../Images/blobs/blob${randomNumber}.svg`
         img.style.backgroundImage = `url(${srcRoute})`
     });
 
