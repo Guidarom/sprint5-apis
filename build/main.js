@@ -39,11 +39,14 @@ function getJoke() {
     const jokeFound = reportAcudits.find((e) => textLastJoke === e.joke);
     if (jokeFound || arrayCounter === 0) {
         if (arrayCounter % 2 === 0) {
-            const apiNorris = 'https://api.chucknorris.io/jokes/random';
-            fetch(apiNorris)
+            //const apiNorris = 'https://api.chucknorris.io/jokes/random';
+            const apiNorris = 'https://api.api-ninjas.com/v1/chucknorris';
+            const header = { headers: { 'X-Api-key': "9sLwYQU9/XR+wGZaG9u1Gg==eS8m76wZjUeoOYR8" } };
+            //const header = {headers: {X-Api-Key: "9sLwYQU9/XR+wGZaG9u1Gg==eS8m76wZjUeoOYR8" }};
+            fetch(apiNorris, header)
                 .then((response) => response.json())
                 .then((data) => {
-                const norrisJoke = data.value;
+                const norrisJoke = data.joke;
                 document.getElementById('getAjoke').innerHTML = norrisJoke;
                 return norrisJoke;
             });
